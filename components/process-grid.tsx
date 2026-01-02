@@ -2,7 +2,7 @@ import { Badge } from "@/components/ui/badge"
 
 export function ProcessGrid() {
     return (
-        <section className="py-24 px-4 w-full bg-white/5 border-y border-white/5">
+        <section id="how-it-works" className="py-24 px-4 w-full bg-white/5 border-y border-white/5 scroll-mt-24">
             <div className="max-w-6xl mx-auto">
                 <div className="text-center mb-16">
                     <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">How It Works</h2>

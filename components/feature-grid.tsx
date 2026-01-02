@@ -25,20 +25,20 @@ export function FeatureGrid() {
     ]
 
     return (
-        <section className="py-24 px-4 w-full max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-                <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">The Native Advantage.</h2>
-                <p className="text-lg text-muted-foreground max-w-2xl mx-auto">Why brands pay more for integrated slots versus traditional ad walls.</p>
+        <section id="features" className="py-24 px-4 w-full max-w-6xl mx-auto">
+            <div className="text-center mb-20">
+                <h2 className="text-4xl md:text-5xl font-bold tracking-tight mb-4 text-white">The Native Advantage.</h2>
+                <p className="text-lg text-zinc-400 max-w-2xl mx-auto">Why brands pay more for integrated slots versus traditional ad walls.</p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {features.map((f, i) => (
-                    <div key={i} className="p-8 rounded-2xl bg-white/5 border border-white/10 hover:border-white/20 transition-colors backdrop-blur-sm group">
-                        <div className="mb-4 p-3 bg-white/5 w-fit rounded-lg group-hover:scale-110 transition-transform duration-300">
+                    <div key={i} className="group p-8 rounded-3xl bg-zinc-900/40 border border-white/5 hover:border-white/10 transition-all duration-500 hover:bg-zinc-900/60">
+                        <div className="mb-6 w-12 h-12 flex items-center justify-center rounded-xl bg-white/5 border border-white/5 group-hover:scale-110 transition-transform duration-300 group-hover:bg-white/10">
                             {f.icon}
                         </div>
-                        <h3 className="font-semibold text-xl mb-2 text-foreground">{f.title}</h3>
-                        <p className="text-muted-foreground leading-relaxed">{f.desc}</p>
+                        <h3 className="font-bold text-xl mb-3 text-white">{f.title}</h3>
+                        <p className="text-zinc-400 leading-relaxed">{f.desc}</p>
                     </div>
                 ))}
             </div>

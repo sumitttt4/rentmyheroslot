@@ -4,6 +4,7 @@ import { useState } from "react"
 import { FeatureGrid } from "@/components/feature-grid"
 import { ProcessGrid } from "@/components/process-grid"
 import { FaqAccordions } from "@/components/faq-accordions"
+import { SiteFooter } from "@/components/site-footer"
 import { WaitlistModal } from "@/components/waitlist-modal"
 import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
@@ -155,17 +156,8 @@ export default function LandingPage() {
         <FaqAccordions />
 
         {/* 6. Footer */}
-        <footer className="w-full border-t border-white/10 bg-black py-12 px-4 pb-32">
-          <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-            <div className="text-center md:text-left">
-              <h4 className="text-lg font-bold mb-2 text-white">RentMyHeroSlot</h4>
-              <p className="text-sm text-muted-foreground">The premium marketplace for micro-sponsorships.</p>
-            </div>
-            <div className="text-sm text-muted-foreground">
-              © {new Date().getFullYear()} RentMyHeroSlot Inc.
-            </div>
-          </div>
-        </footer>
+        {/* 6. Footer */}
+        <SiteFooter />
 
 
       </div>
