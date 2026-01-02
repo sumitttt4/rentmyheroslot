@@ -13,7 +13,7 @@ const activities = [
 
 export function ActivityTicker() {
     return (
-        <div className="fixed bottom-0 left-0 right-0 z-40 bg-black/80 backdrop-blur-md border-t border-white/10 py-3 overflow-hidden pointer-events-none">
+        <div className="fixed bottom-0 left-0 right-0 z-40 bg-black/80 backdrop-blur-lg border-t border-white/5 py-3 overflow-hidden pointer-events-none">
             <div className="max-w-7xl mx-auto relative flex items-center">
                 <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-black to-transparent z-10" />
                 <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-black to-transparent z-10" />

@@ -9,10 +9,10 @@ import { Button } from "@/components/ui/button"
 import { motion } from "framer-motion"
 import { Badge } from "@/components/ui/badge"
 import { NativePill } from "@/components/native-pill"
-import { ActivityTicker } from "@/components/activity-ticker"
 import { FounderBadge } from "@/components/founder-badge"
 import { Input } from "@/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
+
 
 
 export default function LandingPage() {
@@ -39,74 +39,74 @@ export default function LandingPage() {
       <div className="relative z-10 flex flex-col items-center overflow-hidden font-sans text-white selection:bg-white/20">
 
         {/* 1. Interactive Hero Section */}
-        <header className="w-full max-w-7xl mx-auto px-4 pt-24 pb-32 flex flex-col items-center text-center z-10 relative">
+        <header className="w-full max-w-4xl mx-auto px-4 pt-40 pb-24 flex flex-col items-center text-center z-10 relative">
 
-          {/* Task 1: The Interactive Hero Pill */}
+          {/* Status Pill */}
           <motion.div
             layout
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="mb-8"
           >
             <NativePill
-              text={brandName ? `${label}: ${brandName}` : "RentMyHeroSlot is live. Join the new era of ads."}
+              text={brandName ? `${label}: ${brandName}` : "RentMyHeroSlot is now in public beta."}
               link="#"
-              variant="glass" // Premium glassmorphism
-              theme={{ primaryColor: "#ffffff" }}
-              className="shadow-[0_0_50px_-10px_rgba(255,255,255,0.2)]" // Subtle glow
+              variant="pill"
+              theme={{
+                primaryColor: "#ffffff",
+                textColor: "#000000"
+              }}
+              className="shadow-[0_0_20px_-5px_rgba(255,255,255,0.5)] font-semibold"
             />
           </motion.div>
 
+          {/* H1 Headline */}
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
-            className="text-5xl md:text-8xl font-bold tracking-tighter mb-6 bg-gradient-to-b from-white via-white to-white/50 bg-clip-text text-transparent max-w-4xl"
+            className="mt-10 text-5xl md:text-7xl font-bold tracking-tight text-white leading-[1.1]"
           >
-            Own the High-Intent Real Estate.
+            The Marketplace for <br className="hidden md:block" />
+            <span className="text-white/80">Premium Header Slots.</span>
           </motion.h1>
 
+          {/* Subheadline */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
-            className="text-xl text-muted-foreground max-w-2xl mb-10 leading-relaxed"
+            className="mt-8 text-lg md:text-xl text-zinc-400 max-w-2xl leading-relaxed font-normal"
           >
-            Stop wasting budget on sidebars. Get featured in the <span className="text-white font-medium">&quot;Announcement Pills&quot;</span> of the world&rsquo;s most trusted tools.
+            Directly book prime announcement space on the world&rsquo;s best SaaS tools and newsletters. No auctions, just results.
           </motion.p>
 
           {/* Interactive Previewer Input */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.3 }}
-            className="w-full max-w-lg relative mb-12 group"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
+            className="mt-16 w-full max-w-2xl"
           >
-            {/* Subtle white glow behind */}
-            <div className="absolute -inset-0.5 bg-white/10 rounded-2xl blur-xl opacity-20 group-hover:opacity-40 transition duration-1000" />
+            <div className="flex flex-col sm:flex-row items-center gap-3">
+              {/* Label Dropdown */}
+              <Select value={label} onValueChange={setLabel}>
+                <SelectTrigger className="h-14 w-full sm:w-[180px] border border-white/10 bg-zinc-900/80 hover:bg-zinc-800 transition-colors rounded-xl text-white font-medium px-4 focus:ring-0 focus:ring-offset-0 focus:border-white/20">
+                  <SelectValue placeholder="Select label" />
+                </SelectTrigger>
+                <SelectContent className="bg-zinc-900 border-white/10 text-white">
+                  <SelectItem value="Sponsored" className="focus:bg-white/10 cursor-pointer">Sponsored</SelectItem>
+                  <SelectItem value="Partnered with" className="focus:bg-white/10 cursor-pointer">Partnered with</SelectItem>
+                  <SelectItem value="Backed by" className="focus:bg-white/10 cursor-pointer">Backed by</SelectItem>
+                  <SelectItem value="Featured in" className="focus:bg-white/10 cursor-pointer">Featured in</SelectItem>
+                </SelectContent>
+              </Select>
 
-            <div className="relative flex items-center w-full h-14 rounded-2xl border border-white/10 bg-black shadow-[inset_0_1px_0_0_rgba(255,255,255,0.05)] transition-all focus-within:border-white/20 overflow-hidden">
-
-              {/* Label Dropdown Badge */}
-              <div className="flex-shrink-0 pl-2">
-                <Select value={label} onValueChange={setLabel}>
-                  <SelectTrigger className="h-10 w-[140px] border border-white/10 bg-zinc-900 hover:bg-zinc-800 transition-colors rounded-xl text-white font-medium pl-3 focus:ring-0 focus:ring-offset-0 shadow-sm">
-                    <SelectValue placeholder="Label" />
-                  </SelectTrigger>
-                  <SelectContent className="bg-black border-white/10 text-white min-w-[150px]">
-                    <SelectItem value="Sponsored" className="focus:bg-zinc-900 cursor-pointer">Sponsored</SelectItem>
-                    <SelectItem value="Partnered with" className="focus:bg-zinc-900 cursor-pointer">Partnered with</SelectItem>
-                    <SelectItem value="Backed by" className="focus:bg-zinc-900 cursor-pointer">Backed by</SelectItem>
-                    <SelectItem value="Featured in" className="focus:bg-zinc-900 cursor-pointer">Featured in</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-
-              {/* Text Input */}
-              <div className="flex-1 flex items-center pr-2 pl-3">
+              {/* Brand Name Input */}
+              <div className="flex-1 relative group">
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-white/5 to-white/10 rounded-xl blur opacity-0 group-focus-within:opacity-100 transition duration-500" />
                 <Input
-                  placeholder="Type your brand name..."
-                  className="flex-1 h-14 border-none bg-transparent p-0 text-white placeholder:text-muted-foreground focus-visible:ring-0 text-base font-normal tracking-wide"
+                  placeholder="Enter your brand name..."
+                  className="relative h-14 w-full border border-white/10 bg-zinc-900/80 rounded-xl text-white placeholder:text-zinc-500 focus-visible:ring-0 focus-visible:border-white/20 text-base px-4"
                   value={brandName}
                   onChange={(e) => setBrandName(e.target.value)}
                 />
@@ -119,25 +119,26 @@ export default function LandingPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-4 w-full justify-center items-center"
+            className="mt-12 flex flex-col sm:flex-row gap-3 w-full justify-center items-center"
           >
             <WaitlistModal type="advertiser">
-              <Button size="lg" className="h-14 px-8 text-base bg-white text-black hover:bg-white/90 rounded-full font-bold shadow-[0_0_30px_-5px_rgba(255,255,255,0.3)] transition-all hover:scale-105">
+              <Button size="lg" className="h-12 px-6 text-sm font-semibold bg-white text-black hover:bg-zinc-100 rounded-2xl shadow-md transition-all">
                 Browse Premium Slots
               </Button>
             </WaitlistModal>
             <WaitlistModal type="creator">
-              <Button size="lg" variant="outline" className="h-14 px-8 text-base border-white/20 bg-transparent text-white hover:bg-white/10 rounded-full hover:scale-105 transition-all">
+              <Button size="lg" className="h-12 px-6 text-sm font-semibold bg-zinc-900 text-white border border-white/10 hover:bg-zinc-800 rounded-2xl transition-all">
                 List Your Website
               </Button>
             </WaitlistModal>
           </motion.div>
 
-          {/* Task 3: Scarcity & Trust Logic */}
+          {/* Founder Slots Badge */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
+            className="mt-8"
           >
             <FounderBadge />
           </motion.div>
@@ -166,8 +167,7 @@ export default function LandingPage() {
           </div>
         </footer>
 
-        {/* Task 2: The Activity Ticker */}
-        <ActivityTicker />
+
       </div>
     </div>
 
